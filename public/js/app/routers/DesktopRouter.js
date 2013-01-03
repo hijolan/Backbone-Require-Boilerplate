@@ -1,6 +1,6 @@
 // DesktopRouter.js
 // ----------------
-define(["jquery", "backbone", "models/Model", "views/View", "collections/Collection"],
+define(["zepto", "backbone", "models/Model", "views/View", "collections/Collection"],
         
     function($, Backbone, Model, View, Collection) {
 

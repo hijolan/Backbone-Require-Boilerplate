@@ -11,9 +11,8 @@ require.config({
 
       // Core Libraries
       // --------------
-      "jquery": "libs/jquery",
-
-      "jqueryui": "libs/jqueryui",
+      // zepto
+      "zepto": ["libs/zepto"],
 
       "underscore": "libs/lodash",
 
@@ -45,16 +44,13 @@ require.config({
   shim: {
 
       // Twitter Bootstrap jQuery plugins
-      "bootstrap": ["jquery"],
-
-      // jQueryUI
-      "jqueryui": ["jquery"],
+      "bootstrap": ["zepto"],
 
       // Backbone
       "backbone": {
 
-        // Depends on underscore/lodash and jQuery
-        "deps": ["underscore", "jquery"],
+        // Depends on underscore/lodash and zepto
+        "deps": ["underscore", "zepto"],
 
         // Exports the global window.Backbone object
         "exports": "Backbone"
@@ -69,7 +65,7 @@ require.config({
 });
 
 // Includes Desktop Specific JavaScript files here (or inside of your Desktop router)
-require(["jquery", "backbone", "routers/DesktopRouter", "jqueryui", "bootstrap", "backbone.validateAll"],
+require(["zepto", "backbone", "routers/DesktopRouter", "bootstrap", "backbone.validateAll"],
 
   function($, Backbone, DesktopRouter) {
 

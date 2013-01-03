@@ -35,29 +35,6 @@
         w.addEventListener("DOMContentLoaded", function() {
 
           // Mobile/Tablet Logic
-          if((/iPhone|iPod|iPad|Android|BlackBerry|Opera Mini|IEMobile/).test(ua)) {
-
-            // Mobile/Tablet CSS and JavaScript files to load
-            config = {
-
-              // CSS files that are loaded when in development mode
-              "dev-css": ["css/libs/jquery.mobile.css"],
-
-              // CSS files that are loaded when in production mode
-              "prod-css": ["css/libs/jquery.mobile.min.css"],
-
-              // JavaScript files that are loaded when in development mode
-              "dev-js": [{ "data-main": "js/app/config/MobileInit.js", "src": "js/libs/require.js" }],
-
-              // JavaScript files that are loaded when in production mode
-              "prod-js": ["js/app/config/MobileInit.min.js"]
-
-            };
-
-          }
-
-          // Desktop Logic
-          else {
 
             // Desktop CSS and JavaScript files to load
             config = {
@@ -75,8 +52,6 @@
               "prod-js": ["js/app/config/DesktopInit.min.js"]
 
             }
-
-          }
 
           // Loads the correct CSS and JavaScript files
           loadFiles(config, function() {
@@ -196,13 +171,19 @@
 </head>
 <body>
 
-  <div data-role="page">
+  <div>
 
-    <header data-role="header" class="navbar nav navbar-inner">
-      <h1>Backbone-Require-Boilerplate (BRB)</h1>
+    <header class="navbar navbar-inner navbar-fixed-top">
+      <a class="brand">Backbone-Require-Boilerplate (BRB)</a >
+      
+      <ul class="nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Link</a></li>
+        <li><button class="btn" type="submit">Button</button></li>
+      </ul>
     </header> <!-- /header -->
 
-    <div class="container-fluid" data-role="content">
+    <div class="container-fluid">
   
       <div class="row-fluid">
       
@@ -216,8 +197,10 @@
 
     </div>
 
-    <footer class="footer navbar navbar-fixed-bottom" data-role="footer">
-        <p>Written by <a href="https://github.com/gfranko" target="_blank">Greg Franko</a></p>
+    <footer class="footer navbar navbar-fixed-bottom">
+        <div class="navbar-inner">
+          <p>Written by <a href="https://github.com/gfranko" target="_blank">Greg Franko</a></p>
+        </div>
     </footer><!-- /footer -->
 
   </div> <!-- /page -->

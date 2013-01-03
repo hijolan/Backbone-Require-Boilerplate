@@ -1,6 +1,6 @@
 // View.js
 // -------
-define(["jquery", "backbone", "models/Model", "text!templates/heading.html"],
+define(["zepto", "backbone", "models/Model", "text!templates/heading.html"],
 
     function($, Backbone, Model, template){
 

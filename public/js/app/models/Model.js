@@ -1,6 +1,6 @@
 // Model.js
 // --------
-define(["jquery", "backbone"],
+define(["zepto", "backbone"],
 
     function($, Backbone) {
 
