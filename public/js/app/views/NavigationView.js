@@ -22,7 +22,7 @@
             },
             backButton: {
               title: "Back",
-              href: "#back"
+              href: "#"
             },
             title: "Backbone-Require-Boilerplate (BRB)"
           }

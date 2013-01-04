@@ -14,7 +14,7 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
               href:   "#next"
             backButton:
               title:  "Back"
-              href:   "#back"
+              href:   "#"
             title: "Backbone-Require-Boilerplate (BRB)"
 
       # The DOM Element associated with @view
