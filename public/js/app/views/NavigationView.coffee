@@ -37,7 +37,6 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
         viewConfig = _.merge @config.template,
           {}
 
-        console.log viewConfig
         @template = _.template template, 
           viewConfig
 
@@ -47,4 +46,3 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
           # Maintains chainability
         return @
         
-        window.scrollTo 0, 0

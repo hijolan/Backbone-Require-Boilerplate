@@ -40,11 +40,9 @@
       NavigationView.prototype.render = function() {
         var viewConfig;
         viewConfig = _.merge(this.config.template, {});
-        console.log(viewConfig);
         this.template = _.template(template, viewConfig);
         this.$el.html(this.template);
         return this;
-        return window.scrollTo(0, 0);
       };
 
       return NavigationView;
