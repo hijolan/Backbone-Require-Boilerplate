@@ -1,6 +1,6 @@
 # DesktopRouter.js
 # ----------------
-define ["zepto", "backbone", "models/Model", "views/View1", "collections/Collection"],
+define ["zepto", "backbone", "models/Model", "views/NavigationView", "collections/Collection"],
 
   ($, Backbone, Model, View1, Collection) -> 
 
