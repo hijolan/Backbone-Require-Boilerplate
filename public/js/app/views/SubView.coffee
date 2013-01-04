@@ -2,16 +2,22 @@
 define ["zepto", "backbone", "models/Model", "views/NavigationView", "views/SubViewContent"],
   ($, Backbone, Model, NavigationView, SubViewContent) ->
     class SubView extends NavigationView
-
-      initialize: ->
-          # Setting the view's template property using the Underscore template method
-        @config.template = _.merge @config.template,
-          {
+      config:
+          template:
             titleBar:
+              actionButton: 
+                title:  "" 
+                href:   "#next"
+              backButton:
+                title:  "Back"
+                href:   "#"
               title: "Sub"
-
             content: ""
-          }
-        super()
+
+      initialize: =>
+          # Setting the view's template property using the Underscore template method
+
+
+        @render()
 
         new SubViewContent({el: @$('.content')})

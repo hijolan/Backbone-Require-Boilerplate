@@ -12,10 +12,10 @@
         "next": "sub"
       },
       index: function() {
-        return new IndexView();
+        return this.currentView = new IndexView();
       },
       sub: function() {
-        return new SubView();
+        return this.currentView = new SubView();
       }
     });
   });

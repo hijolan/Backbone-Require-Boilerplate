@@ -17,7 +17,7 @@ define ["zepto", "backbone", "models/Model", "views/IndexView", "views/SubView",
 
       index: () ->
         # Instantiates a new view which will render the header text to the page
-        new IndexView()
+        @currentView = new IndexView()
 
       sub: () ->
-        new SubView()
+        @currentView = new SubView()

@@ -4,14 +4,18 @@
 
   <header class="navbar navbar-inner navbar-fixed-top">
     <div class="nav pull-left">
-      <a href="<%= titleBar.backButton.href %>" class="btn" type="submit"><%= titleBar.backButton.title %></a>
+      <% if (titleBar.backButton.title.length > 0) {%>
+        <a href="<%= titleBar.backButton.href %>" class="btn" type="submit"><%= titleBar.backButton.title %></a>
+      <% } %>
     </div>
     <div>
       <a class="brand"><%= titleBar.title %></a >
-      
      </div>
     <div class="nav pull-right">
+      <% console.log(titleBar.actionButton.title.length) %>
+      <% if (titleBar.actionButton.title.length > 0) {%>
       <a href="<%= titleBar.actionButton.href %>" class="btn" type="submit"><%= titleBar.actionButton.title %></a>
+      <% } %>
     </div>
   </header> <!-- /header -->
 

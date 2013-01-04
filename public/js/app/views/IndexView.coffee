@@ -2,16 +2,21 @@
 define ["zepto", "backbone", "models/Model", "views/NavigationView", "views/IndexViewContent"],
   ($, Backbone, Model, NavigationView, IndexViewContent) ->
     class IndexView extends NavigationView
-
-      initialize: ->
-          # Setting the view's template property using the Underscore template method
-        @config.template = _.merge @config.template,
-          {
+      config:
+          template:
             titleBar:
+              actionButton: 
+                title:  "Next" 
+                href:   "#next"
+              backButton:
+                title:  ""
+                href:   "#"
               title: "Index"
             content: ""
-          }
 
-        super()
+      initialize: =>
+          # Setting the view's template property using the Underscore template method
+
+        @render()
 
         new IndexViewContent({el: @$('.content')})

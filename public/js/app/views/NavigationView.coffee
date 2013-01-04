@@ -16,19 +16,17 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
               title:  "Back"
               href:   "#"
             title: "Backbone-Require-Boilerplate (BRB)"
+          content: ""
 
       # The DOM Element associated with @view
       el: "body"
 
-      # View constructor
-      initialize: () ->
-
-        # Calls the view's render method
-        @render()
-
       # View Event Handlers
       events: {
       }
+
+      remove: () ->
+        @$el.html ""
 
       # Renders the view's template to the UI
       render: () ->

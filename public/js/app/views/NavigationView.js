@@ -25,17 +25,18 @@
               href: "#"
             },
             title: "Backbone-Require-Boilerplate (BRB)"
-          }
+          },
+          content: ""
         }
       };
 
       NavigationView.prototype.el = "body";
 
-      NavigationView.prototype.initialize = function() {
-        return this.render();
-      };
-
       NavigationView.prototype.events = {};
+
+      NavigationView.prototype.remove = function() {
+        return this.$el.html("");
+      };
 
       NavigationView.prototype.render = function() {
         var viewConfig;
