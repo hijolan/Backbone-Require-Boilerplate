@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["zepto", "backbone", "models/Model", "views/NavigationView", "text!templates/LoremIpsum.html"], function($, Backbone, Model, NavigationView, contentText) {
+  define(["zepto", "backbone", "models/Model", "views/NavigationView", "views/SubViewContent"], function($, Backbone, Model, NavigationView, SubViewContent) {
     var SubView;
     return SubView = (function(_super) {
 
@@ -18,9 +18,12 @@
           titleBar: {
             title: "Sub"
           },
-          content: contentText
+          content: ""
         });
-        return SubView.__super__.initialize.call(this);
+        SubView.__super__.initialize.call(this);
+        return new SubViewContent({
+          el: this.$('.content')
+        });
       };
 
       return SubView;

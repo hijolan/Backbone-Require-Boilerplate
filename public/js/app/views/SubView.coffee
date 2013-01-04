@@ -1,6 +1,6 @@
 
-define ["zepto", "backbone", "models/Model", "views/NavigationView", "text!templates/LoremIpsum.html"],
-  ($, Backbone, Model, NavigationView, contentText) ->
+define ["zepto", "backbone", "models/Model", "views/NavigationView", "views/SubViewContent"],
+  ($, Backbone, Model, NavigationView, SubViewContent) ->
     class SubView extends NavigationView
 
       initialize: ->
@@ -10,6 +10,8 @@ define ["zepto", "backbone", "models/Model", "views/NavigationView", "text!templ
             titleBar:
               title: "Sub"
 
-            content: contentText
+            content: ""
           }
         super()
+
+        new SubViewContent({el: @$('.content')})
