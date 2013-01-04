@@ -25,14 +25,11 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
       events: {
       }
 
-      remove: () ->
-        @$el.html ""
-
       # Renders the view's template to the UI
       render: () ->
 
           # Setting the view's template property using the Underscore template method
-        viewConfig = _.merge @config.template,
+        viewConfig = _.merge {}, @config.template,
           {}
 
         @template = _.template template, 

@@ -34,13 +34,9 @@
 
       NavigationView.prototype.events = {};
 
-      NavigationView.prototype.remove = function() {
-        return this.$el.html("");
-      };
-
       NavigationView.prototype.render = function() {
         var viewConfig;
-        viewConfig = _.merge(this.config.template, {});
+        viewConfig = _.merge({}, this.config.template, {});
         this.template = _.template(template, viewConfig);
         this.$el.html(this.template);
         return this;
