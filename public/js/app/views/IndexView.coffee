@@ -1,6 +1,6 @@
 
-define ["zepto", "backbone", "models/Model", "views/NavigationView"],
-  ($, Backbone, Model, NavigationView) ->
+define ["zepto", "backbone", "models/Model", "views/NavigationView", "text!templates/LoremIpsum.html"],
+  ($, Backbone, Model, NavigationView, contentText) ->
     class IndexView extends NavigationView
 
       initialize: ->
@@ -9,5 +9,6 @@ define ["zepto", "backbone", "models/Model", "views/NavigationView"],
           {
             titleBar:
               title: "Index"
+            content: contentText
           }
         super()
