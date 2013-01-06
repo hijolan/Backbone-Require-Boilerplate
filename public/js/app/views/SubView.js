@@ -24,9 +24,13 @@
             }
           }
         });
-        this.render();
+        return SubView.__super__.initialize.call(this);
+      };
+
+      SubView.prototype.render = function() {
+        SubView.__super__.render.call(this);
         return new SubViewContent({
-          el: this.$('.content')
+          el: this.$(this.config.template.content.el)
         });
       };
 

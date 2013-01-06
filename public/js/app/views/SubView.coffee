@@ -14,6 +14,9 @@ define ["zepto", "backbone", "models/Model", "views/NavigationView", "views/SubV
                   title: ""
           }
 
-        @render()
+        super()
 
-        new SubViewContent({el: @$('.content')})
+      render: ->
+        super()
+
+        new SubViewContent({el: @$(@config.template.content.el)})

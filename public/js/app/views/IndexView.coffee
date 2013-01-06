@@ -14,7 +14,7 @@ define ["zepto", "backbone", "models/Model", "views/NavigationView", "views/Inde
                   title: ""
           }
 
-          super()
+        super()
 
       render: ->
         super()
