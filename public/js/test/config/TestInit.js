@@ -10,9 +10,7 @@ require.config({
 
       // Core Libraries
       // --------------
-      "jquery": "libs/jquery",
-
-      "jquerymobile": "libs/jquery.mobile",
+      "zepto": "libs/zepto",
 
       "underscore": "libs/lodash",
 
@@ -49,20 +47,24 @@ require.config({
   // Sets the configuration for your third party scripts that are not AMD compatible
   shim: {
 
+      "zepto": {
+        "exports": "$"
+      },
+
       // Twitter Bootstrap jQuery plugins
-      "bootstrap": ["jquery"],
+      "bootstrap": ["zepto"],
 
       // Jasmine-jQuery plugin
-      "jasminejquery": ["jquery"],
+      "jasminejquery": ["zepto"],
 
       // jQuery Mobile
-      "jquerymobile": ["jquery"],
+      "jquerymobile": ["zepto"],
 
       // Backbone
       "backbone": {
 
           // Lists jQuery and Underscore as dependencies
-          "deps": ["underscore", "jquery"],
+          "deps": ["underscore", "zepto"],
 
           // Exports the global 'window.Backbone' object
           "exports": "Backbone"
@@ -94,7 +96,7 @@ require.config({
 });
 
 // Include Desktop Specific JavaScript files here (or inside of your Desktop router)
-require(["jquery", "backbone", "jasmine-html", "jquerymobile", "bootstrap", "backbone.validateAll"],
+require(["zepto", "backbone", "jasmine-html", "bootstrap", "backbone.validateAll"],
 
   function($, Backbone, jasmine) {
 
