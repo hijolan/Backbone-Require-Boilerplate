@@ -3,7 +3,7 @@
   var __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(["zepto", "backbone", "models/Model", "text!templates/NavigationView.html"], function($, Backbone, Model, template) {
+  define(["zepto", "backbone", "models/Model", "text!templates/NavigationView.html"], function($, Backbone, Model, Template) {
     var NavigationView;
     return NavigationView = (function(_super) {
 
@@ -26,19 +26,27 @@
             },
             title: "Backbone-Require-Boilerplate (BRB)"
           },
-          content: ""
+          content: {
+            text: "",
+            el: ".content"
+          }
         }
       };
 
-      NavigationView.prototype.el = "body";
+      NavigationView.prototype.el = ".content-container";
 
       NavigationView.prototype.events = {};
+
+      NavigationView.prototype.initialize = function() {
+        NavigationView.__super__.initialize.call(this);
+        this.template = Template;
+        return this.render();
+      };
 
       NavigationView.prototype.render = function() {
         var viewConfig;
         viewConfig = _.merge({}, this.config.template, {});
-        this.template = _.template(template, viewConfig);
-        this.$el.html(this.template);
+        this.$el.html(_.template(this.template, viewConfig));
         return this;
       };
 

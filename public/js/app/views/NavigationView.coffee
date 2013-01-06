@@ -2,7 +2,7 @@
 # -------
 define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html"],
 
-  ($, Backbone, Model, template) ->
+  ($, Backbone, Model, Template) ->
 
     class NavigationView extends Backbone.View
 
@@ -16,14 +16,24 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
               title:  "Back"
               href:   "#"
             title: "Backbone-Require-Boilerplate (BRB)"
-          content: ""
+          content: {
+            text: ""
+            el: ".content"
+          }
 
       # The DOM Element associated with @view
-      el: "body"
+      el: ".content-container"
 
       # View Event Handlers
       events: {
       }
+
+      initialize: () ->
+        super()
+
+        @template = Template
+
+        @render()
 
       # Renders the view's template to the UI
       render: () ->
@@ -32,11 +42,9 @@ define ["zepto", "backbone", "models/Model", "text!templates/NavigationView.html
         viewConfig = _.merge {}, @config.template,
           {}
 
-        @template = _.template template, 
-          viewConfig
-
           # Dynamically updates the UI with the view's template
-        @$el.html @template
+        @$el.html _.template @template, 
+          viewConfig
 
           # Maintains chainability
         return @

@@ -14,6 +14,9 @@ define ["zepto", "backbone", "models/Model", "views/NavigationView", "views/Inde
                   title: ""
           }
 
-        @render()
+          super()
 
-        new IndexViewContent({el: @$('.content')})
+      render: ->
+        super()
+
+        new IndexViewContent({el: @$(@config.template.content.el)})

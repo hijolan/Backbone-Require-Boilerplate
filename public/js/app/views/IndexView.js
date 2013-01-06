@@ -14,7 +14,7 @@
       }
 
       IndexView.prototype.initialize = function() {
-        this.config = _.merge({}, this.config, {
+        return this.config = _.merge({}, this.config, {
           template: {
             titleBar: {
               title: "Index",
@@ -23,10 +23,13 @@
               }
             }
           }
-        });
-        this.render();
+        }, IndexView.__super__.initialize.call(this));
+      };
+
+      IndexView.prototype.render = function() {
+        IndexView.__super__.render.call(this);
         return new IndexViewContent({
-          el: this.$('.content')
+          el: this.$(this.config.template.content.el)
         });
       };
 
