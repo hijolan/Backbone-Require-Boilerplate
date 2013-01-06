@@ -42,14 +42,12 @@ define(["zepto", "backbone", "text!templates/NavigationView.html", "views/IndexV
 
                     // Instantiates a new Model instance
                     this.model = new Model();
-
                     // We are spying on the _validate method to see if it gets called
                     spyOn(Model.prototype, "validate").andCallThrough();
 
                 });
 
                 it("should be in a valid state", function() {
-
                     expect(this.model.isValid()).toBe(true);
 
                 });
